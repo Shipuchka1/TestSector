@@ -21,6 +21,7 @@ namespace TestSector.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult Index(TestingAct testingAct)
         {
@@ -31,6 +32,7 @@ namespace TestSector.Controllers
             else
                 return RedirectToAction("Next", new { questionId = testingAct.CurrentQuestion.Id });
         }
+
 
         [HttpGet]
         public ActionResult Next(int questionId)
