@@ -1,0 +1,26 @@
+﻿@model TestSector.Models.Question
+@{
+    ViewBag.Title = "Next";
+}
+
+<h2>@Model.Description</h2>
+
+@using (Html.BeginForm("Next", "Test", FormMethod.Post))
+{
+    <input type="hidden" value="Id" name="Id" />
+
+
+    foreach (var item in @Model.Answers)
+    {
+
+
+        <div>
+            @Html.RadioButtonFor(model => model.UserAnswerId, item.Id)
+            @Html.Label(item.Description)
+        </div>
+
+    }
+
+    <input type="submit" value="Отправить" name="Id" />
+
+}
